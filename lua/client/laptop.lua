@@ -7,7 +7,8 @@ RegisterCommand('laptop', function(source)
     chat("Opened", {255, 0, 0})
 end)
 
-RegisterNUICallback('login', function(data)
+RegisterNUICallback('login', function(data, cb)
+
     if (data.password == '1234')
     then
         isLoggedIn = true
@@ -21,13 +22,18 @@ RegisterNUICallback('login', function(data)
             error="Invalid Password"
         })
     end
+
+    cb('ok')
+    return;
 end)
 
-RegisterNUICallback('logout', function(data)
+RegisterNUICallback('logout', function(data, cb)
     isLoggedIn = false
     laptopOpen = false
 
     setDisplay(false);
+    cb('ok')
+    return;
 end)
 
 -- Disable controls while in the laptop
@@ -52,6 +58,7 @@ function setDisplay(bool)
         e = "open-laptop",
         open = bool
     })
+    return;
 end
 
 function chat(str, color)
