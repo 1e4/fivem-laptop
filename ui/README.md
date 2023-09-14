@@ -1,24 +1,12 @@
-# ui
+# FiveM Laptop
 
-## Project setup
-```
-npm install
-```
+The idea of this mini project was to get Vue working with NUI,
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Install steps
+Copy .env.example to .env
+run `npm run build` within the UI directory
+`start fivem-laptop` in game console
+Type `/laptop` to open the laptop, password is '1234'
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Functionality
+It talks to the backend server, if the password is correct then it will launch a basic laptop with no other functionality.
